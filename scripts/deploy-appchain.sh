@@ -19,7 +19,7 @@ if ! command -v weave &> /dev/null; then
 fi
 
 echo "✅ Weave CLI found"
-weave --version
+weave version
 echo ""
 
 # Navigate to project directory

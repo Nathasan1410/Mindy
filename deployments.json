@@ -1,0 +1,11 @@
+{
+  "chainId": "initiation-2",
+  "rpcUrl": "https://rpc.testnet.initia.xyz",
+  "contracts": {
+    "MindyVault": "0x08f382645c04f880c1e8685fc36c00477261fe81",
+    "MindyStrategyManager": "0x01d1ec4a39b282342bd368ffcf2aeb4fc45525c0",
+    "MindySessionKeyModule": "0x3ff20a4f85fa720917e0a27f592df1f00c174cfc",
+    "MindyYieldRouter": "0xc728248b646a99768e757f3999d141582550d8ab"
+  },
+  "deployedAt": "2026-03-26T07:34:17Z"
+}
