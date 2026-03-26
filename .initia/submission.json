@@ -1,0 +1,75 @@
+{
+  "name": "Mindy",
+  "description": "AI-powered cross-rollup yield optimizer on Initia. Mindy automatically scans yield opportunities across Initia ecosystem rollups, scores them for risk/reward using AI, and auto-rebalances your portfolio via session keys and Interwoven Bridge.",
+  "version": "0.1.0",
+  "team": {
+    "name": "Solo Builder",
+    "members": [
+      {
+        "name": "Your Name",
+        "role": "Full Stack Developer",
+        "github": "your-github-username",
+        "twitter": "your-twitter-handle"
+      }
+    ]
+  },
+  "track": ["DeFi", "AI"],
+  "category": "Yield Optimization",
+  "tags": [
+    "initia",
+    "defi",
+    "yield",
+    "ai",
+    "cross-chain",
+    "auto-compound",
+    "session-keys",
+    "interwoven-bridge"
+  ],
+  "repository": {
+    "url": "https://github.com/your-username/mindy",
+    "branch": "main"
+  },
+  "submission": {
+    "rollupChainId": "mindy-local",
+    "contractAddresses": {
+      "MindyVault": "",
+      "MindyStrategyManager": "",
+      "MindySessionKeyModule": "",
+      "MindyYieldRouter": ""
+    },
+    "deploymentTxHash": "",
+    "demoVideoUrl": ""
+  },
+  "features": {
+    "sessionKeys": true,
+    "interwovenBridge": true,
+    "initUsernames": true,
+    "autoRebalance": true,
+    "aiAnalysis": true
+  },
+  "initiaNativeFeatures": [
+    "Session Keys / Auto-Signing UX",
+    "Interwoven Bridge for cross-rollup transfers",
+    ".init usernames for user identity"
+  ],
+  "revenueModel": "2% performance fee on yield earned",
+  "targetUsers": "DeFi yield farmers seeking automated, AI-optimized portfolio management across Initia rollups",
+  "competitiveAdvantage": [
+    "AI-powered risk/reward analysis with transparent reasoning",
+    "Session keys eliminate repeated wallet approvals",
+    "Cross-rollup yield optimization via Interwoven Bridge",
+    "Conversational AI interface for portfolio Q&A"
+  ],
+  "timeline": {
+    "started": "2026-03-26",
+    "completed": "2026-04-15",
+    "submissionDeadline": "2026-04-15T23:00:00Z"
+  },
+  "demoInstructions": "1. Connect wallet via InterwovenKit\n2. Deposit INIT into Mindy Vault\n3. Run AI Analysis to see yield scoring\n4. Enable Auto-Rebalance (grant session key)\n5. Watch AI rebalance without wallet popups\n6. Ask Mindy in chat: 'Why did you pick Pool B?'",
+  "socials": {
+    "website": "",
+    "twitter": "",
+    "discord": "",
+    "telegram": ""
+  }
+}

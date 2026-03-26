@@ -1,0 +1,28 @@
+{
+  "name": "mindy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mindy - AI-Powered Cross-Rollup Yield Optimizer on Initia",
+  "scripts": {
+    "dev": "pnpm --filter frontend dev",
+    "build": "pnpm --filter frontend build",
+    "start": "pnpm --filter frontend start",
+    "lint": "pnpm --filter frontend lint",
+    "contracts:build": "cd contracts && forge build",
+    "contracts:test": "cd contracts && forge test",
+    "contracts:deploy:local": "bash scripts/deploy-local.sh",
+    "contracts:deploy:initia": "bash scripts/deploy-initia.sh",
+    "copy-abis": "bash scripts/copy-abis.sh",
+    "setup": "bash scripts/setup.sh"
+  },
+  "keywords": [
+    "initia",
+    "defi",
+    "yield",
+    "ai",
+    "hackathon",
+    "dorahacks"
+  ],
+  "author": "",
+  "license": "MIT"
+}

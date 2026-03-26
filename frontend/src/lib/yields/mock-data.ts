@@ -1,0 +1,116 @@
+import { type YieldOpportunity } from "@/lib/ai/groq-client"
+
+/**
+ * Mock yield opportunities for hackathon demo
+ * In production, these would be fetched from actual DeFi protocols
+ */
+export const mockYieldOpportunities: YieldOpportunity[] = [
+  {
+    id: "1",
+    name: "INIT-USDC LP",
+    protocol: "MinitSwap",
+    rollupChainId: 1001,
+    apy: 24.5,
+    tvl: 2500000,
+    riskFactors: ["impermanent_loss", "smart_contract"],
+    token: "INIT-USDC",
+    lastUpdated: new Date().toISOString(),
+  },
+  {
+    id: "2",
+    name: "INIT Staking",
+    protocol: "Initia Labs",
+    rollupChainId: 1001,
+    apy: 12.3,
+    tvl: 15000000,
+    riskFactors: [" slashing"],
+    token: "INIT",
+    lastUpdated: new Date().toISOString(),
+  },
+  {
+    id: "3",
+    name: "Leveraged ETH",
+    protocol: "YieldRollup",
+    rollupChainId: 1002,
+    apy: 45.8,
+    tvl: 800000,
+    riskFactors: ["impermanent_loss", "liquidation", "smart_contract"],
+    token: "ETH",
+    lastUpdated: new Date().toISOString(),
+  },
+  {
+    id: "4",
+    name: "Stable Vault",
+    protocol: "SafeYield",
+    rollupChainId: 1003,
+    apy: 8.2,
+    tvl: 5000000,
+    riskFactors: ["smart_contract"],
+    token: "USDC",
+    lastUpdated: new Date().toISOString(),
+  },
+  {
+    id: "5",
+    name: "Gaming Token LP",
+    protocol: "GameFi Hub",
+    rollupChainId: 1004,
+    apy: 67.3,
+    tvl: 300000,
+    riskFactors: ["impermanent_loss", "high_volatility", "smart_contract"],
+    token: "GAME-USDT",
+    lastUpdated: new Date().toISOString(),
+  },
+]
+
+export const mockStrategies = [
+  {
+    id: 0,
+    name: "INIT-USDC LP",
+    targetAPY: 2450, // basis points (24.5%)
+    riskScore: 45,
+    currentAllocation: 0,
+    isActive: true,
+    rollupChainId: 1001,
+    reasoning: "Balanced risk-reward with established protocol",
+  },
+  {
+    id: 1,
+    name: "INIT Staking",
+    targetAPY: 1230,
+    riskScore: 25,
+    currentAllocation: 0,
+    isActive: true,
+    rollupChainId: 1001,
+    reasoning: "Low risk, stable returns from native staking",
+  },
+  {
+    id: 2,
+    name: "Leveraged ETH",
+    targetAPY: 4580,
+    riskScore: 72,
+    currentAllocation: 0,
+    isActive: true,
+    rollupChainId: 1002,
+    reasoning: "High yield potential but elevated liquidation risk",
+  },
+  {
+    id: 3,
+    name: "Stable Vault",
+    targetAPY: 820,
+    riskScore: 18,
+    currentAllocation: 0,
+    isActive: true,
+    rollupChainId: 1003,
+    reasoning: "Conservative stablecoin yield with minimal risk",
+  },
+  {
+    id: 4,
+    name: "Gaming Token LP",
+    targetAPY: 6730,
+    riskScore: 85,
+    currentAllocation: 0,
+    isActive: true,
+    rollupChainId: 1004,
+    reasoning: "Very high APY but significant volatility risk",
+  },
+]
