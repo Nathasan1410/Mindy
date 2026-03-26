@@ -42,6 +42,9 @@ contracts/foundry-cache/
 *.swo
 *~
 
+# History
+.history/
+
 # Temporary files
 tmp/
 temp/
