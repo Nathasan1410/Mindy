@@ -50,16 +50,39 @@ Initiate/
 │   │   ├── MindyStrategyManager.sol
 │   │   ├── MindySessionKeyModule.sol
 │   │   └── MindyYieldRouter.sol
+│   ├── script/
+│   │   └── Deploy.s.sol
 │   └── test/
-├── frontend/               # Next.js + TypeScript
+├── frontend/               # Next.js + TypeScript + TailwindCSS
 │   ├── src/
 │   │   ├── app/
+│   │   │   ├── dashboard/     # Portfolio overview
+│   │   │   ├── strategies/    # Yield opportunities
+│   │   │   ├── bridge/        # Cross-rollup transfers
+│   │   │   ├── settings/      # Session keys & config
+│   │   │   └── api/           # AI endpoints
 │   │   ├── components/
-│   │   └── lib/
-│   └── abis/
-├── scripts/                # Deployment scripts (WSL)
-├── .initia/
-│   └── submission.json     # Hackathon submission
+│   │   │   ├── dashboard/     # Dashboard widgets
+│   │   │   ├── strategies/    # Strategy cards
+│   │   │   ├── shared/        # Common components
+│   │   │   └── ui/            # shadcn/ui components
+│   │   ├── hooks/             # React hooks for contracts
+│   │   └── lib/               # Utilities, AI client
+│   ├── abis/                  # Contract ABIs
+│   └── package.json
+├── scripts/                # Deployment & setup (WSL)
+│   ├── deploy-to-testnet.sh
+│   ├── deploy-testnet.sh
+│   ├── deploy-local.sh
+│   ├── copy-abis.sh
+│   └── setup.sh
+├── docs/                   # Documentation
+│   ├── TESTNET_DEPLOYMENT.md
+│   ├── FRONTEND_IMPLEMENTATION.md
+│   ├── BUILD_SUMMARY.md
+│   └── API_KEYS_SETUP.md
+├── deployments-testnet.json # Testnet deployment info
+├── DEPLOYMENT_QUICKSTART.md
 └── README.md
 ```
 
@@ -77,8 +100,10 @@ Initiate/
 ### 1. Clone and Install
 
 ```bash
-# Install dependencies
+# Frontend dependencies
+cd frontend
 pnpm install
+cd ..
 ```
 
 ### 2. Set Up Environment
@@ -86,36 +111,78 @@ pnpm install
 Create `.env.local` in project root:
 
 ```bash
-# AI Provider
+# AI Provider (Get from https://console.groq.com)
 GROQ_API_KEY=gsk_your_key_here
 
-# Contract Addresses (auto-filled after deployment)
+# Contract Addresses (update after deployment)
 MINDY_VAULT_ADDRESS=
 MINDY_STRATEGY_MANAGER_ADDRESS=
 MINDY_SESSION_KEY_MODULE_ADDRESS=
 MINDY_YIELD_ROUTER_ADDRESS=
 ```
 
-### 3. Deploy to Initia (WSL)
+### 3. Deploy Contracts
+
+#### Option A: Local Testing (Anvil)
 
 ```bash
-# Full setup (recommended for first time)
 cd /mnt/d/Projekan/Macam2Hackathon/Initiate
-bash scripts/setup.sh
-
-# Or step-by-step:
-bash scripts/deploy-appchain.sh
-bash scripts/deploy-contracts.sh
+bash scripts/deploy-local.sh
 bash scripts/copy-abis.sh
+```
+
+#### Option B: Initia Testnet (Recommended for Hackathon)
+
+**Step 1**: Get testnet INIT from https://faucet.initia.xyz
+
+**Step 2**: Run deployment script in WSL:
+
+```bash
+cd /mnt/d/Projekan/Macam2Hackathon/Initiate
+bash scripts/deploy-to-testnet.sh
+```
+
+This interactive script will:
+- Check Foundry installation
+- Guide you through funding your account
+- Deploy all 4 contracts to Initia testnet
+- Display addresses to update in `.env.local`
+
+**Step 3**: Update `.env.local` with deployed addresses:
+
+```bash
+NEXT_PUBLIC_RPC_URL=https://rpc.testnet.initia.xyz
+NEXT_PUBLIC_CHAIN_ID=initiation-2
+MINDY_VAULT_ADDRESS=0x...
+MINDY_STRATEGY_MANAGER_ADDRESS=0x...
+MINDY_SESSION_KEY_MODULE_ADDRESS=0x...
+MINDY_YIELD_ROUTER_ADDRESS=0x...
+```
+
+**Step 4**: Copy ABIs and commit:
+
+```bash
+bash scripts/copy-abis.sh
+git add deployments-testnet.json .env.local frontend/abis/
+git commit -m "Deploy Mindy to Initia testnet"
+git push
 ```
 
 ### 4. Run Frontend
 
 ```bash
+cd frontend
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
+
+### 📱 Frontend Pages
+
+- **Dashboard** (`/dashboard`) - Portfolio overview & AI insights
+- **Strategies** (`/strategies`) - Browse & invest in yield opportunities
+- **Bridge** (`/bridge`) - Cross-rollup asset transfers
+- **Settings** (`/settings`) - Session keys & preferences
 
 ## 🎯 Hackathon Demo Flow
 
@@ -199,6 +266,14 @@ Mindy uses **Groq's free tier** (Llama 3.1 70B) for:
 ## 🤝 Team
 
 Built by [Your Name] with AI assistance from Qoder + Claude Code
+
+## 📚 Documentation
+
+- **[TESTNET_DEPLOYMENT.md](docs/TESTNET_DEPLOYMENT.md)** - Complete guide to deploying on Initia testnet
+- **[FRONTEND_IMPLEMENTATION.md](docs/FRONTEND_IMPLEMENTATION.md)** - Detailed frontend architecture and components
+- **[DEPLOYMENT_QUICKSTART.md](DEPLOYMENT_QUICKSTART.md)** - Quick reference for deployment
+- **[API_KEYS_SETUP.md](docs/API_KEYS_SETUP.md)** - Setting up Groq and AI providers
+- **[BUILD_SUMMARY.md](docs/BUILD_SUMMARY.md)** - Overall project build summary
 
 ## 📄 License
 
