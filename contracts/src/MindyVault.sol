@@ -52,7 +52,7 @@ contract MindyVault is ERC20, ERC4626, Ownable, ReentrancyGuard {
      * @param amount Amount of underlying tokens to deposit
      * @return shares Number of vault shares minted
      */
-    function deposit(uint256 amount) public override nonReentrant returns (uint256 shares) {
+    function deposit(uint256 amount) public nonReentrant returns (uint256 shares) {
         shares = super.deposit(amount, msg.sender);
         userDeposits[msg.sender] += amount;
         emit Deposited(msg.sender, amount, shares);
@@ -63,10 +63,10 @@ contract MindyVault is ERC20, ERC4626, Ownable, ReentrancyGuard {
      * @param shares Number of vault shares to burn
      * @return amount Amount of underlying tokens withdrawn
      */
-    function withdraw(uint256 shares) public override nonReentrant returns (uint256 amount) {
+    function withdraw(uint256 shares) public nonReentrant returns (uint256 amount) {
         amount = super.withdraw(shares, msg.sender, msg.sender);
-        userDeposits[msg.sender] = userDeposits[msg.sender] >= amount 
-            ? userDeposits[msg.sender] - amount 
+        userDeposits[msg.sender] = userDeposits[msg.sender] >= amount
+            ? userDeposits[msg.sender] - amount
             : 0;
         emit Withdrawn(msg.sender, amount, shares);
     }
@@ -176,6 +176,13 @@ contract MindyVault is ERC20, ERC4626, Ownable, ReentrancyGuard {
      */
     function availableFunds() external view returns (uint256) {
         return totalAssets() - totalAllocated;
+    }
+
+    /**
+     * @dev Override decimals to resolve ambiguity between ERC20 and ERC4626
+     */
+    function decimals() public pure override(ERC20, ERC4626) returns (uint8) {
+        return 18;
     }
     
     /**

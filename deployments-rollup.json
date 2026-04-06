@@ -1,0 +1,20 @@
+{
+  "chainId": "mindy-1",
+  "chainName": "Mindy Rollup",
+  "rpcUrl": "http://localhost:8545",
+  "explorerUrl": "https://scan.testnet.initia.xyz/custom-network/add/link?config=eyJ2bSI6ImV2bSIsImNoYWluSWQiOiJtaW5keS0xIiwibWluR2FzUHJpY2UiOjAsImRlbm9tIjoiR0FTIiwibGNkIjoiaHR0cDovL2xvY2FsaG9zdDoxMzE3IiwicnBjIjoiaHR0cDovL2xvY2FsaG9zdDoyNjY1NyIsImpzb25ScGMiOiJodHRwOi8vbG9jYWxob3N0Ojg1NDUiLCJpbmRleGVyIjoiaHR0cDovL2xvY2FsaG9zdDo2NzY3In0=",
+  "deployedAt": "2026-04-06T11:38:00Z",
+  "deployer": "0x309856fbf90c31F2C1b328BEc662B25012C635b1",
+  "contracts": {
+    "MindyVault": "0xEA4a472F0123fC9889650be807A1FF5EF780029F",
+    "MindyStrategyManager": "0x6349a9480f5FB7D79F3abd7C5D89789227beD6F8",
+    "MindySessionKeyModule": "0x2700C2B1268B115cF06136b881341903aBC7DC4a",
+    "MindyYieldRouter": "0x2dB4AE7D4AF912fA0C1e9A35301b7E29F6f25180"
+  },
+  "configuration": {
+    "vaultConfigured": true,
+    "strategyManagerConfigured": true,
+    "vaultStrategyManager": "0x6349a9480f5FB7D79F3abd7C5D89789227beD6F8",
+    "strategyManagerVault": "0xEA4a472F0123fC9889650be807A1FF5EF780029F"
+  }
+}
