@@ -51,3 +51,6 @@ temp/
 
 # Deployment
 contracts/deployments.json
+General-key.pem
+General-key.pem:Zone.Identifier
+minitia-backup.tar.gz
