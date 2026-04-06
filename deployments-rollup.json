@@ -1,7 +1,7 @@
 {
   "chainId": "mindy-1",
   "chainName": "Mindy Rollup",
-  "rpcUrl": "http://localhost:8545",
+  "rpcUrl": "http://34.204.190.49:8545",
   "explorerUrl": "https://scan.testnet.initia.xyz/custom-network/add/link?config=eyJ2bSI6ImV2bSIsImNoYWluSWQiOiJtaW5keS0xIiwibWluR2FzUHJpY2UiOjAsImRlbm9tIjoiR0FTIiwibGNkIjoiaHR0cDovL2xvY2FsaG9zdDoxMzE3IiwicnBjIjoiaHR0cDovL2xvY2FsaG9zdDoyNjY1NyIsImpzb25ScGMiOiJodHRwOi8vbG9jYWxob3N0Ojg1NDUiLCJpbmRleGVyIjoiaHR0cDovL2xvY2FsaG9zdDo2NzY3In0=",
   "deployedAt": "2026-04-06T11:38:00Z",
   "deployer": "0x309856fbf90c31F2C1b328BEc662B25012C635b1",
